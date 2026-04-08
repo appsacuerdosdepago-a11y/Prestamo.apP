@@ -1,180 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Detalle del Préstamo</title>
+<meta charset="UTF-8">
+<title>Estado de Préstamo</title>
 
 <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f3f5f9;
+        margin: 0;
+    }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f5f5f5;
-  margin: 0;
-  padding: 0;
-}
+    .header {
+        background: linear-gradient(90deg, #4b5db6, #5f6fc9);
+        color: white;
+        padding: 20px;
+    }
 
-/* CONTENEDOR */
-.container {
-  max-width: 420px;
-  margin: auto;
-  background: #ffffff;
-  padding: 16px;
-  position: relative;
-  overflow: hidden;
-}
+    .warning {
+        font-size: 13px;
+        margin-top: 10px;
+        color: #ffdede;
+    }
 
-/* MARCA DE AGUA TEXTO */
-.container::before{
-  content:"FINANOVA";
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-60%,-300%) rotate(-25deg);
-  font-size:40px; /* tamaño más pequeño */
-  font-weight:900;
-  color:#e2c15c;
-  opacity:0.08;
-  letter-spacing:6px;
-  white-space:nowrap;
-  z-index:0;
-}
+    .codigo {
+        background: #d9dee8;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
 
-/* CONTENIDO ENCIMA */
-.container *{
-  position:relative;
-  z-index:2;
-}
+    .card {
+        background: #eee6df;
+        margin: 20px;
+        padding: 25px;
+        border-radius: 10px;
+    }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
+    .atraso {
+        color: orange;
+        font-weight: bold;
+    }
 
-.label {
-  color: #666;
-}
+    .monto {
+        font-size: 28px;
+        margin: 15px 0;
+    }
 
-.value {
-  font-weight: bold;
-  color: #333;
-}
+    .fecha {
+        float: right;
+        font-size: 18px;
+    }
 
-.section {
-  margin-top: 20px;
-}
+    .mensaje {
+        color: #ff6a00;
+        font-size: 14px;
+        margin-top: 15px;
+    }
 
-.section-title {
-  background: linear-gradient(90deg,#e2c15c,#e2c15c);
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-.card {
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 12px;
-  margin-top: 10px;
-  background: #fafafa;
-}
-
-.highlight {
-  color: #523511;
-  font-weight: bold;
-}
-
-.button {
-  margin-top: 20px;
-  background: linear-gradient(90deg,#e2c15c,#e2c15c);
-  color: #fff;
-  text-align: center;
-  padding: 12px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.contact {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.contact div {
-  width: 40px;
-  height: 40px;
-  background: #e2c15c;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 18px;
-}
+    .boton {
+        display: block;
+        width: calc(100% - 40px);
+        margin: 20px;
+        padding: 15px;
+        background: #2f57b5;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+    }
 
 </style>
 </head>
 
 <body>
 
-<div class="container">
-<div class="row"><span class="label">Nombre de APP</span><span class="value">NexiPlus</span></div>
-<div class="row"><span class="label">Tipo del pedido</span><span class="value">Pedido normal</span></div>
-<div class="row"><span class="label">Tipo de cobro</span><span class="value">Cobro Normal</span></div>
-
-<div class="section">
-<div class="section-title">Información del prestatario</div>
-
-
-
-<div class="row"><span class="label">Sexo</span><span class="value">Femenino</span></div>
-
-
-<!--
-<div class="row"><span class="label">Numero De C.I</span><span class="value">23113122</span></div>
-<div class="row"><span class="label">Teléfono</span><span class="value">3388564003</span></div>
-<div class="row"><span class="label">Nombre</span><span class="value">Micaela Milagro Vitaliano</span></div>
-<div class="row"><span class="label">E-mail</span><span class="value">gabilujancampos@gmail.com</span></div> 
--->
-
-<div class="contact">
-<div>📞</div>
-<div>💬</div>
-
+<div class="header">
+    <h2>CreditoVeloz</h2>
+    <p>+54 292****225</p>
+    <div class="warning">
+        Advertencia: Al realizar el pago, confirma que los datos sean correctos.
+    </div>
 </div>
 
+<div class="codigo">
+    Código de pedido: 7439981174388163585
 </div>
 
 <div class="card">
-<div class="row"><span class="highlight">hoy vence su cuota</span></div>
-<div class="row"><span class="label">Fecha de pago</span><span class="value">2026-04-08</span></div>
-<div class="row"><span class="label">Monto a pagar</span><span class="value highlight">$54.000.00</span></div>
+    <div class="fecha">19-03-2026</div>
+
+    <div class="atraso">Atrasado 1 Días</div>
+
+    <div class="monto">$42,000</div>
+    <div>Monto del préstamo</div>
+
+    <div class="mensaje">
+        Su préstamo tiene 1 días vencidos, pague de inmediato.
+    </div>
 </div>
 
-<div class="section">
-<div class="section-title">Información del préstamo</div>
+<!-- BOTÓN FUNCIONAL -->
+<button class="boton" onclick="mensajeMantenimiento()">
+    Pagar ahora
+</button>
 
-<div class="row"><span class="label">Monto del préstamo</span><span class="value">$48.000,00</span></div>
-<div class="row"><span class="label">Tiempo de desembolso</span><span class="value">2026-03-23 14:47:45</span></div>
-<div class="row"><span class="label">Plazo de préstamo</span><span class="value">1 cuota (15 dias) </span></div>
-<div class="row"><span class="label highlight">Pago de prolongacion</span><span class="value highlight">$54.000.00</span></div>
-</div>
+<script>
+function mensajeMantenimiento() {
+    alert("LO SENTIMOS\nLa app está en mantenimiento.\nComuníquese con el área encargada de cobranza.");
+}
+</script>
 
-<div class="button">Ver detalles de las deudas anteriores</div>
-
-</div>
-
-<!--
--->
 </body>
 </html>
-
-
-
 
